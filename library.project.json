@@ -1,0 +1,6 @@
+{
+  "name": "Disk",
+  "tree": {
+    "$path": "./src"
+  }
+}

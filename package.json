@@ -1,0 +1,23 @@
+{
+  "name": "luau-disk",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seaofvoices/luau-disk.git"
+  },
+  "license": "MIT",
+  "main": "./src/init.lua",
+  "scripts": {
+    "prepare": "npmluau",
+    "roblox-test": "sh ./scripts/roblox-test.sh",
+    "build-assets": "sh ./scripts/build-assets.sh",
+    "lint": "sh ./scripts/analyze.sh",
+    "format": "stylua .",
+    "style-check": "stylua . --check",
+    "clean": "rm -rf node_modules && rm -rf roblox && rm -rf build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "npmluau": "^0.1.0"
+  }
+}
