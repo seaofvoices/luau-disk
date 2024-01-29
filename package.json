@@ -14,7 +14,7 @@
     "lint": "sh ./scripts/analyze.sh",
     "format": "stylua .",
     "style-check": "stylua . --check",
-    "clean": "rm -rf node_modules && rm -rf roblox && rm -rf build"
+    "clean": "rm -rf node_modules roblox build"
   },
   "dependencies": {},
   "devDependencies": {
