@@ -20,7 +20,7 @@ end)
 
 it('returns the same array when given indexes out of bounds', function()
     local array = { 'a', 'b', 'c', 'd' }
-    local result = removeSortedIndexes(array, { 5,7,9 })
+    local result = removeSortedIndexes(array, { 5, 7, 9 })
 
     expect(result).toBe(array)
 end)
