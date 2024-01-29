@@ -34,6 +34,7 @@ local Disk = {
         reduce = require('./array/reduce'),
         removeIndexes = require('./array/removeIndexes'),
         removeSortedIndexes = require('./array/removeSortedIndexes'),
+        removeValues = require('./array/removeValues'),
         reversed = require('./array/reversed'),
         sort = require('./array/sort'),
         sortByKey = require('./array/sortByKey'),
