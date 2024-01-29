@@ -17,16 +17,16 @@ local function removeValues<T>(array: { T }, ...: T?): { T }
         end
     end
 
-    local removeLength = #removeIndexes
+    local removeIndexesLength = #removeIndexes
 
-    if removeLength == 0 then
+    if removeIndexesLength == 0 then
         return array
-    elseif removeLength == arrayLenth then
+    elseif removeIndexesLength == arrayLenth then
         return {}
     else
         local cloned = table.clone(array)
 
-        for i = removeLength, 1, -1 do
+        for i = removeIndexesLength, 1, -1 do
             table.remove(cloned, removeIndexes[i])
         end
 
