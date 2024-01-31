@@ -1,5 +1,6 @@
 # Changelog
 
+- add `Array.fromTryFn` ([#7](https://github.com/seaofvoices/luau-disk/pull/7))
 - add `Array.takeWhile` ([#6](https://github.com/seaofvoices/luau-disk/pull/6))
 - add `Array.stepBy` ([#5](https://github.com/seaofvoices/luau-disk/pull/5))
 - add `Array.removeValues` ([#4](https://github.com/seaofvoices/luau-disk/pull/4))
