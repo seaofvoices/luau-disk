@@ -38,6 +38,7 @@ local Disk = {
         reversed = require('./array/reversed'),
         sort = require('./array/sort'),
         sortByKey = require('./array/sortByKey'),
+        stepBy = require('./array/stepBy'),
         sum = require('./array/sum'),
         sumBy = require('./array/sumBy'),
         zip = require('./array/zip'),
