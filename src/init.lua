@@ -17,6 +17,7 @@ local Disk = {
         flatMap = require('./array/flatMap'),
         flatten = require('./array/flatten'),
         fromFn = require('./array/fromFn'),
+        fromTryFn = require('./array/fromTryFn'),
         isArray = require('./array/isArray'),
         isEmpty = require('./array/isEmpty'),
         map = require('./array/map'),
