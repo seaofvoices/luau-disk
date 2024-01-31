@@ -1,3 +1,7 @@
+local setType = require('./set/type')
+
+export type Set<T> = setType.Set<T>
+
 local Disk = {
     Array = {
         all = require('./array/all'),
@@ -57,6 +61,9 @@ local Disk = {
         merge = require('./map/merge'),
         remove = require('./map/remove'),
         values = require('./map/values'),
+    },
+    Set = {
+        fromArray = require('./set/fromArray'),
     },
     None = require('./None'),
     WeakMap = require('./WeakMap'),
