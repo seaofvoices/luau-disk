@@ -49,6 +49,7 @@ local Disk = {
         copy = require('./map/copy'),
         count = require('./map/count'),
         entries = require('./map/entries'),
+        invert = require('./map/invert.lua'),
         isEmpty = require('./map/isEmpty'),
         keys = require('./map/keys'),
         mapEntries = require('./map/mapEntries'),
