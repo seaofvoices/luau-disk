@@ -30,7 +30,7 @@ it('takes elements starting from a specified index while the predicate is true',
 end)
 
 it('takes no elements if predicate is false for the first element', function()
-    local result = takeWhile({ 1, 2, 3, 4, 5 }, function(element)
+    local result = takeWhile({ 1, 2, 3, 4, 5 }, function(_element)
         return false
     end)
 
