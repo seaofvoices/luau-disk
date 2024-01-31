@@ -41,6 +41,7 @@ local Disk = {
         stepBy = require('./array/stepBy'),
         sum = require('./array/sum'),
         sumBy = require('./array/sumBy'),
+        takeWhile = require('./array/takeWhile'),
         zip = require('./array/zip'),
     },
     Map = {
