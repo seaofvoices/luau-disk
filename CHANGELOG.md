@@ -1,5 +1,6 @@
 # Changelog
 
+- add `Array.stepBy` ([#5](https://github.com/seaofvoices/luau-disk/pull/5))
 - add `Array.removeValues` ([#4](https://github.com/seaofvoices/luau-disk/pull/4))
 - add `Array.removeIndexes` and `Array.removeSortedIndexes` ([#3](https://github.com/seaofvoices/luau-disk/pull/3))
 - add `Array.deduplicate` and `Array.deduplicateByKey` ([#2](https://github.com/seaofvoices/luau-disk/pull/2))

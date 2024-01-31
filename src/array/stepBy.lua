@@ -30,7 +30,7 @@ local function stepBy<T>(array: { T }, step: number): { T }
 
         return result
     else
-        error('invalid step passed to Array.stepBy')
+        error(`invalid step value '{step}' passed to Array.stepBy`)
     end
 end
 
