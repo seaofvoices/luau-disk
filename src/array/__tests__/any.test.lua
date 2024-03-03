@@ -6,6 +6,14 @@ local expect = jestGlobals.expect
 local it = jestGlobals.it
 
 it('is false for an empty array', function()
+    local result = any({}, function(_value)
+        return true
+    end)
+
+    expect(result).toEqual(false)
+end)
+
+it('is false if all element are false', function()
     local result = any({ 1, 2, 3, 4 }, function(_value)
         return false
     end)
