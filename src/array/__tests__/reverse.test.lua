@@ -1,5 +1,5 @@
 local jestGlobals = (require)('@pkg/jest-globals')
-local reversed = require('../reversed')
+local reversed = require('../reverse')
 
 local expect = jestGlobals.expect
 local it = jestGlobals.it

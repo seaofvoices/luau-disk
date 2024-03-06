@@ -1,4 +1,4 @@
-local function reversed<T>(array: { T }): { T }
+local function reverse<T>(array: { T }): { T }
     local length = #array
 
     if length < 2 then
@@ -16,4 +16,4 @@ local function reversed<T>(array: { T }): { T }
     return newArray
 end
 
-return reversed
+return reverse
