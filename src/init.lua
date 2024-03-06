@@ -10,6 +10,7 @@ local Disk = {
         average = require('./array/average'),
         averageBy = require('./array/averageBy'),
         concat = require('./array/concat'),
+        contains = require('./array/contains'),
         copy = require('./array/copy'),
         deduplicate = require('./array/deduplicate'),
         deduplicateByKey = require('./array/deduplicateByKey'),
