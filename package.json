@@ -18,6 +18,8 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "npmluau": "^0.1.0"
+    "npmluau": "^0.1.1",
+    "@jsdotlua/jest-globals": "^3.6.1-rc.2",
+    "@jsdotlua/jest": "^3.6.1-rc.2"
   }
 }

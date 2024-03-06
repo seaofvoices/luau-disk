@@ -1,4 +1,4 @@
-local jestGlobals = (require)('@pkg/jest-globals')
+local jestGlobals = require('@pkg/@jsdotlua/jest-globals')
 local product = require('../product')
 
 local expect = jestGlobals.expect
