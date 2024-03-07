@@ -9,7 +9,7 @@
   "main": "./src/init.lua",
   "scripts": {
     "prepare": "npmluau",
-    "roblox-test": "sh ./scripts/roblox-test.sh",
+    "test:roblox": "sh ./scripts/roblox-test.sh",
     "build-assets": "sh ./scripts/build-assets.sh",
     "lint": "sh ./scripts/analyze.sh",
     "format": "stylua .",
