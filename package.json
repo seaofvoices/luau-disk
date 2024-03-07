@@ -9,15 +9,19 @@
   "main": "./src/init.lua",
   "scripts": {
     "prepare": "npmluau",
-    "roblox-test": "sh ./scripts/roblox-test.sh",
+    "test:roblox": "sh ./scripts/roblox-test.sh",
     "build-assets": "sh ./scripts/build-assets.sh",
-    "lint": "sh ./scripts/analyze.sh",
+    "lint": "sh ./scripts/analyze.sh && selene src",
+    "lint:luau": "sh ./scripts/analyze.sh",
+    "lint:selene": "selene src",
     "format": "stylua .",
     "style-check": "stylua . --check",
     "clean": "rm -rf node_modules roblox build"
   },
   "dependencies": {},
   "devDependencies": {
-    "npmluau": "^0.1.0"
+    "npmluau": "^0.1.1",
+    "@jsdotlua/jest-globals": "^3.6.1-rc.2",
+    "@jsdotlua/jest": "^3.6.1-rc.2"
   }
 }

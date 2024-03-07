@@ -1,5 +1,5 @@
 local None = require('../../None')
-local jestGlobals = (require)('@pkg/jest-globals')
+local jestGlobals = require('@pkg/@jsdotlua/jest-globals')
 local merge = require('../merge')
 
 local expect = jestGlobals.expect

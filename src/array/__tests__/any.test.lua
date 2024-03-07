@@ -1,5 +1,5 @@
 local any = require('../any')
-local jestGlobals = (require)('@pkg/jest-globals')
+local jestGlobals = require('@pkg/@jsdotlua/jest-globals')
 
 local jest = jestGlobals.jest
 local expect = jestGlobals.expect

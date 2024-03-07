@@ -1,6 +1,6 @@
 local ReplicatedStorage = game:GetService('ReplicatedStorage')
 
-local jest = require('@pkg/jest')
+local jest = require('@pkg/@jsdotlua/jest')
 
 local success, result = jest.runCLI(ReplicatedStorage, {
     color = false,
