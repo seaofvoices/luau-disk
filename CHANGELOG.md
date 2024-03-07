@@ -1,5 +1,7 @@
 # Changelog
 
+## 0.1.1
+
 - rename `Array.reversed` to `Array.reverse` ([#12](https://github.com/seaofvoices/luau-disk/pull/12))
 - add `Array.contains` ([#10](https://github.com/seaofvoices/luau-disk/pull/10))
 - add `Set<T>` type and `Set.fromArray` ([#9](https://github.com/seaofvoices/luau-disk/pull/9))
