@@ -2,8 +2,7 @@
   "bundle": {
     "require_mode": "path"
   },
-  "process": [
-    "remove_types",
+  "rules": [
     "remove_comments",
     "remove_spaces",
     "compute_expression",

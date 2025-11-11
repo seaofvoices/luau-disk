@@ -1,7 +1,7 @@
 [tools]
-rojo = { github = "rojo-rbx/rojo", version = "=7.3.0" }
-selene = { github = "Kampfkarren/selene", version = "=0.25.0" }
+rojo = { github = "rojo-rbx/rojo", version = "=7.6.1" }
+selene = { github = "Kampfkarren/selene", version = "=0.28.0"}
 stylua = { github = "JohnnyMorganz/styLua", version = "=0.18.2" }
-darklua = { github = "seaofvoices/darklua", version = "=0.12.1" }
-luau-lsp = { github = "JohnnyMorganz/luau-lsp", version = "=1.28.1" }
+darklua = { github = "seaofvoices/darklua", version = "=0.17.2" }
+luau-lsp = { github = "JohnnyMorganz/luau-lsp", version = "=1.56.1"}
 run-in-roblox = { github = "rojo-rbx/run-in-roblox", version = "=0.3.0" }

@@ -24,6 +24,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: CompeyDev/setup-rokit@v0.1.2
+
+      - name: Enable corepack
+        run: corepack enable
       - uses: actions/setup-node@v3
         with:
           node-version: "latest"
@@ -31,11 +35,17 @@ jobs:
           cache-dependency-path: "yarn.lock"
 
       - name: Install packages
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
-      - run: yarn publish
+      - name: Authenticate yarn
+        run: |-
+          yarn config set npmAlwaysAuth true
+          yarn config set npmAuthToken $NPM_AUTH_TOKEN
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish to npm
+        run: yarn npm publish --access public
 
   create-release:
     needs: publish-package
@@ -47,7 +57,7 @@ jobs:
       upload_url: ${{ steps.create_release.outputs.upload_url }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Create tag
         run: |
@@ -88,10 +98,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: Roblox/setup-foreman@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: CompeyDev/setup-rokit@v0.1.2
 
+      - name: Enable corepack
+        run: corepack enable
       - uses: actions/setup-node@v3
         with:
           node-version: "latest"
@@ -99,7 +109,10 @@ jobs:
           cache-dependency-path: "yarn.lock"
 
       - name: Install packages
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
+
+      - name: Run npmluau
+        run: yarn run prepare
 
       - name: Build assets
         run: yarn run build-assets

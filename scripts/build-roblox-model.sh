@@ -12,7 +12,7 @@ find roblox/src -name '__tests__' -type d -exec rm -r {} +
 find roblox/src -name '*.test.lua' -type f -exec rm -r {} +
 find roblox/src -name 'jest.config.lua' -type f -exec rm -r {} +
 
-darklua process --config .darklua-prod.json roblox/src roblox/src
+darklua process --config .darklua.json roblox/src roblox/src
 
 cp library.project.json roblox/
 
