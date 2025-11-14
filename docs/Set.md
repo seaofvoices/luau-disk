@@ -23,7 +23,7 @@ local result = Set.count({ a = true, b = true })
 -- result is 2
 ```
 
-*Related [isEmpty](#isEmpty)*
+*Related [isEmpty](#isempty)*
 
 ## fromArray
 
