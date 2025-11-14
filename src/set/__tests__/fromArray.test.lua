@@ -1,5 +1,6 @@
-local fromArray = require('../fromArray')
 local jestGlobals = require('@pkg/@jsdotlua/jest-globals')
+
+local fromArray = require('../fromArray')
 
 local expect = jestGlobals.expect
 local it = jestGlobals.it

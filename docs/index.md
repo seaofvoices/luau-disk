@@ -7,6 +7,7 @@ local Disk = require('@pkg/luau-disk')
 
 local Array = Disk.Array
 local Map = Disk.Map
+local Set = Disk.Set
 local WeakMap = Disk.WeapMap
 
 type Set<T> = Disk.Set<T>
@@ -34,14 +35,7 @@ For functions that operates on maps (or related to maps): [Map documentation](./
 local Set = Disk.Set
 ```
 
-## fromArray
-
-Creates a new Set from an array of values.
-
-```lua
-local result = Set.fromArray({ "a", "b", "c" })
--- result is { a = true, b = true, c = true }
-```
+For functions that operates on sets (or related to sets): [Set documentation](./Set.md)
 
 # WeakMap
 
