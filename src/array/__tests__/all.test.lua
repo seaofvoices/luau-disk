@@ -30,7 +30,8 @@ it('is false if one element does not satisfy the predicate', function()
 end)
 
 it('stops calling the predicate as soon as one element does not satisfy the predicate', function()
-    local predicate, predicateFn = jest.fn(function(value: number)
+    -- cast to any because of jest.fn issue https://github.com/jsdotlua/jest-lua/issues/23
+    local predicate, predicateFn: any = jest.fn(function(value: number)
         return value % 2 == 0
     end)
     local result = all({ 4, 2, 5, 4 }, predicateFn)

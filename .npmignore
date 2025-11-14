@@ -4,6 +4,7 @@
 /docs/
 
 /roblox
+/temp
 /build
 
 .gitattributes
@@ -19,19 +20,17 @@ stylua.toml
 .styluaignore
 
 /globalTypes.d.lua
-**/sourcemap.json
-**/*.project.json
-
-/roblox-test.server.lua
+sourcemap.json
+*.project.json
 
 **/__tests__
 **/*.test.lua
-**/jest.config.lua
+jest.config.luau
 
-**/*.rbxl
-**/*.rbxlx
-**/*.rbxl.lock
-**/*.rbxlx.lock
-**/*.rbxm
-**/*.rbxmx
+*.rbxl
+*.rbxlx
+*.rbxl.lock
+*.rbxlx.lock
+*.rbxm
+*.rbxmx
 

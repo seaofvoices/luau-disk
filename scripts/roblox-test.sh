@@ -1,27 +1,29 @@
 #!/bin/sh
 
-set -e
+set -ex
+
+DARKLUA_CONFIG=".darklua-tests.json"
 
 if [ ! -d node_modules ]; then
-    rm -rf roblox
     yarn install
 fi
-
-if [ -d "roblox" ]; then
-    ls -d roblox/* | grep -v node_modules | xargs rm -rf
+if [ ! -d node_modules/.luau-aliases ]; then
+    yarn prepare
 fi
+
+rm -rf temp
 
 rojo sourcemap test-place.project.json -o sourcemap.json
 
-darklua process src roblox/src
-darklua process roblox-test.server.lua roblox/roblox-test.server.lua
+darklua process --config $DARKLUA_CONFIG jest.config.luau temp/jest.config.luau
+darklua process --config $DARKLUA_CONFIG scripts/roblox-test.server.luau temp/scripts/roblox-test.server.luau
+darklua process --config $DARKLUA_CONFIG node_modules temp/node_modules
+darklua process --config $DARKLUA_CONFIG src temp/src
 
-if [ ! -d "roblox/node_modules" ]; then
-    darklua process node_modules roblox/node_modules
-fi
+cp test-place.project.json temp/
 
-cp test-place.project.json roblox/
+rojo build temp/test-place.project.json -o temp/test-place.rbxl
 
-rojo build roblox/test-place.project.json -o place.rbxl
+run-in-roblox --place temp/test-place.rbxl --script temp/scripts/roblox-test.server.luau
 
-run-in-roblox --place place.rbxl --script roblox/roblox-test.server.lua
+rm -rf temp

@@ -1,5 +1,7 @@
 # Changelog
 
+- add `Map.fromEntries` ([#17](https://github.com/seaofvoices/luau-disk/pull/17))
+
 ## 0.1.1
 
 - rename `Array.reversed` to `Array.reverse` ([#12](https://github.com/seaofvoices/luau-disk/pull/12))

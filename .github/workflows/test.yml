@@ -16,10 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: Roblox/setup-foreman@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: CompeyDev/setup-rokit@v0.1.2
 
+      - name: Enable corepack
+        run: corepack enable
       - uses: actions/setup-node@v3
         with:
           node-version: "latest"
@@ -27,11 +27,13 @@ jobs:
           cache-dependency-path: "yarn.lock"
 
       - name: Install packages
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
+
+      - name: Run npmluau
+        run: yarn run prepare
 
       - name: Run linter
-        # for now, only use selene because luau-lsp is not able to ignore the node_modules folder
-        run: yarn run lint:selene
+        run: yarn run lint
 
       - name: Verify code style
         run: yarn run style-check

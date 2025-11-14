@@ -11,8 +11,11 @@
 /node_modules
 
 build/
+temp/
 test-places/
 
 /globalTypes.d.lua
+
+/.yarn
 
 **/sourcemap.json

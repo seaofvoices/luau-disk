@@ -54,6 +54,26 @@ local result = Map.entries({ a = "A", b = "B" }, "letter", "upper")
 -- result is {{ letter = "a", upper = "A"}, { letter = "b", upper = "B"}}
 ```
 
+*Related [fromEntries](#fromEntries)*
+
+# fromEntries
+
+Create a map from a key-value pair array.
+
+```lua
+local result = Map.fromEntries({ { "a", "A" }, { "b", "B" } })
+-- result is { a = "A", b = "B" }
+```
+
+Optionally, two values can be passed to use as object keys when creating the map.
+
+```lua
+local result = Map.fromEntries({{ letter = "a", upper = "A"}, { letter = "b", upper = "B"}}, "letter", "upper")
+-- result is { a = "A", b = "B" }
+```
+
+*Related [entries](#entries)*
+
 # invert
 
 Creates a new map by swapping keys and values of the original map.
