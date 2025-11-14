@@ -1,5 +1,6 @@
 # Changelog
 
+- add `Set.merge` ([#19](https://github.com/seaofvoices/luau-disk/pull/19))
 - add `Array.count` ([#18](https://github.com/seaofvoices/luau-disk/pull/18))
 - add `Map.fromEntries` ([#17](https://github.com/seaofvoices/luau-disk/pull/17))
 
