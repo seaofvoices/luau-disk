@@ -68,6 +68,7 @@ local Disk = {
     },
     Set = {
         fromArray = require('./set/fromArray'),
+        map = require('./set/map'),
         merge = require('./set/merge'),
     },
     None = require('./None'),
