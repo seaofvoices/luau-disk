@@ -39,12 +39,12 @@ local function merge<T>(...: Set<T>?): Set<T>
             local metatable = getmetatable(mergeSet)
 
             if metatable ~= nil and type(metatable.__call) == 'function' then
-                for key, value in pairs(mergeSet) do
-                    result[key] = value
+                for key in pairs(mergeSet) do
+                    result[key] = true
                 end
             else
-                for key, value in mergeSet do
-                    result[key] = value
+                for key in mergeSet do
+                    result[key] = true
                 end
             end
         end

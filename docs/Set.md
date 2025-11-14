@@ -22,6 +22,18 @@ local result = Set.fromArray({ "a", "b", "c" })
 -- result is { a = true, b = true, c = true }
 ```
 
+## map
+
+Returns a new set where each value is converted with a mapping function. When the mapping function returns a `nil` value, the entry is removed.
+
+```lua
+local set = Set.fromArray({ 1, 2, 3 })
+local result = Set.map(set, function(value)
+    return value * 2
+end)
+-- result is { 2 = true, 4 = true, 6 = true }
+```
+
 ## merge
 
 Merge multiple sets into a single set.
