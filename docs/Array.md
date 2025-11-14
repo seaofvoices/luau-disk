@@ -137,6 +137,19 @@ print(value == result) -- false
 print(value[1] == result[1] and value[2] == result[2]) -- true
 ```
 
+## count
+
+Count the amount of elements that satisfy a predicate.
+
+```lua
+local array = { 'banana', 'cherry', 'date', 'blueberry' },
+local result = count(array, function(value: string)
+    return #value > 5
+end)
+
+-- result is 3
+```
+
 ## deduplicate
 
 Removes duplicate elements from an array.

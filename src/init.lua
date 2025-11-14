@@ -12,6 +12,7 @@ local Disk = {
         concat = require('./array/concat'),
         contains = require('./array/contains'),
         copy = require('./array/copy'),
+        count = require('./array/count'),
         deduplicate = require('./array/deduplicate'),
         deduplicateByKey = require('./array/deduplicateByKey'),
         filter = require('./array/filter'),
