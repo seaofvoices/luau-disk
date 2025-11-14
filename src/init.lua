@@ -67,7 +67,9 @@ local Disk = {
         values = require('./map/values'),
     },
     Set = {
+        count = require('./set/count'),
         fromArray = require('./set/fromArray'),
+        isEmpty = require('./set/isEmpty'),
         map = require('./set/map'),
         merge = require('./set/merge'),
     },
