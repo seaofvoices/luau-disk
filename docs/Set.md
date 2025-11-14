@@ -10,8 +10,20 @@ local Set = Disk.Set
 
 If you are not familiar with this kind of utility functions, don't get overwhelmed and start with these:
 
+- [count](#count)
 - [fromArray](#fromarray)
 - [merge](#merge)
+
+## count
+
+Returns the number of entries in the given set.
+
+```lua
+local result = Set.count({ a = true, b = true })
+-- result is 2
+```
+
+*Related [isEmpty](#isEmpty)*
 
 ## fromArray
 
@@ -21,6 +33,17 @@ Creates a new Set from an array of values.
 local result = Set.fromArray({ "a", "b", "c" })
 -- result is { a = true, b = true, c = true }
 ```
+
+## isEmpty
+
+Returns `true` if a set has no entries.
+
+```lua
+local result = Set.isEmpty({ }) --> true
+local result = Set.isEmpty({ key = true }) -- false
+```
+
+*Related [count](#count)*
 
 ## map
 
