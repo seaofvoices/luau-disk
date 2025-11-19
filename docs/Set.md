@@ -25,6 +25,18 @@ local result = Set.count({ a = true, b = true })
 
 *Related [isEmpty](#isempty)*
 
+## filter
+
+Creates a set from only elements that satisfy a condition.
+
+```lua
+local set = Set.fromArray({ 1, 2, 3, 4, 5, 6 })
+local result = Set.filter(set, function(value)
+    return value % 2 == 0
+end)
+-- result is { 2 = true, 4 = true, 6 = true }
+```
+
 ## fromArray
 
 Creates a new Set from an array of values.
