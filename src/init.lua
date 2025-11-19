@@ -74,6 +74,7 @@ local Disk = {
         map = require('./set/map'),
         merge = require('./set/merge'),
         removeValues = require('./set/removeValues'),
+        toArray = require('./set/toArray'),
     },
     None = require('./None'),
     WeakMap = require('./WeakMap'),

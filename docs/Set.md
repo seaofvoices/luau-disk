@@ -14,6 +14,7 @@ If you are not familiar with this kind of utility functions, don't get overwhelm
 - [fromArray](#fromarray)
 - [merge](#merge)
 - [removeValues](#removeValues)
+- [toArray](#toarray)
 
 ## count
 
@@ -48,6 +49,8 @@ Creates a new Set from an array of values.
 local result = Set.fromArray({ "a", "b", "c" })
 -- result is { a = true, b = true, c = true }
 ```
+
+*Related [toArray](#toarray)*
 
 ## isEmpty
 
@@ -98,3 +101,17 @@ local result = Set.removeValues(set, "b")
 **Note:** This function returns the same set if no values are given or if the values to remove are not in the set.
 
 *Related [filter](#filter)*
+
+## toArray
+
+Creates an array from a set.
+
+```lua
+local set = { a = true, b = true, c = true }
+local result = Set.toArray(set)
+-- result is { "a", "b", "c" } but the ordering is not guaranteed
+```
+
+**Note:** Lua/Luau does not guarantee the iteration order of dictionary-like tables, so this function does not guarantee the ordering of the values in the resulting array.
+
+*Related [fromArray](#fromarray)*
