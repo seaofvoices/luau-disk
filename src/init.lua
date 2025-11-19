@@ -73,6 +73,7 @@ local Disk = {
         isEmpty = require('./set/isEmpty'),
         map = require('./set/map'),
         merge = require('./set/merge'),
+        removeValues = require('./set/removeValues'),
     },
     None = require('./None'),
     WeakMap = require('./WeakMap'),

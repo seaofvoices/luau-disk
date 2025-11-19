@@ -13,6 +13,7 @@ If you are not familiar with this kind of utility functions, don't get overwhelm
 - [count](#count)
 - [fromArray](#fromarray)
 - [merge](#merge)
+- [removeValues](#removeValues)
 
 ## count
 
@@ -36,6 +37,8 @@ local result = Set.filter(set, function(value)
 end)
 -- result is { 2 = true, 4 = true, 6 = true }
 ```
+
+*Related [removeValues](#removevalues)*
 
 ## fromArray
 
@@ -81,3 +84,17 @@ local result = Set.merge(set1, set2)
 ```
 
 The function will skip `nil` values when merging.
+
+## removeValues
+
+Returns a new set with all the given values removed.
+
+```lua
+local set = Set.fromArray({ "a", "b", "c" })
+local result = Set.removeValues(set, "b")
+-- result is { a = true, c = true }
+```
+
+**Note:** This function returns the same set if no values are given or if the values to remove are not in the set.
+
+*Related [filter](#filter)*

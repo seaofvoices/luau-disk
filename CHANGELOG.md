@@ -1,5 +1,6 @@
 # Changelog
 
+- add `Set.removeValues` ([#23](https://github.com/seaofvoices/luau-disk/pull/23))
 - add `Set.filter` ([#22](https://github.com/seaofvoices/luau-disk/pull/22))
 - add `Set.count` and `Set.isEmpty` ([#21](https://github.com/seaofvoices/luau-disk/pull/21))
 - add `Set.map` ([#20](https://github.com/seaofvoices/luau-disk/pull/20))
