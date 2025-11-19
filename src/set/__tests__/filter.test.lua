@@ -35,7 +35,7 @@ end)
 
 it('returns all elements when predicate always returns true', function()
     local set = fromArray({ 1, 2, 3, 4, 5 })
-    local result = filter(set, function(value: number)
+    local result = filter(set, function(_value: number)
         return true
     end)
 
