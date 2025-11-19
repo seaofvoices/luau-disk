@@ -68,6 +68,7 @@ local Disk = {
     },
     Set = {
         count = require('./set/count'),
+        filter = require('./set/filter'),
         fromArray = require('./set/fromArray'),
         isEmpty = require('./set/isEmpty'),
         map = require('./set/map'),
