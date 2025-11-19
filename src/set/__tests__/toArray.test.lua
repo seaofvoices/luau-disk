@@ -10,7 +10,8 @@ it('converts set to array', function()
     local set = fromArray({ 1, 2, 3, 4, 5 })
     local result = toArray(set)
 
-    expect(result).toEqual({ 1, 2, 3, 4, 5 })
+    expect(result).toHaveLength(5)
+    expect(result).toEqual(expect.arrayContaining({ 1, 2, 3, 4, 5 }))
 end)
 
 it('handles empty set', function()
