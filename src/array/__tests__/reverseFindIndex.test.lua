@@ -34,7 +34,7 @@ end)
 
 it('handles empty array', function()
     local array = {}
-    local result = reverseFindIndex(array, function(element)
+    local result = reverseFindIndex(array, function(_element)
         return true
     end)
 
