@@ -70,6 +70,7 @@ local Disk = {
         count = require('./set/count'),
         filter = require('./set/filter'),
         fromArray = require('./set/fromArray'),
+        intersect = require('./set/intersect'),
         isEmpty = require('./set/isEmpty'),
         map = require('./set/map'),
         merge = require('./set/merge'),
