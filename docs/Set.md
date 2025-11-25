@@ -63,6 +63,19 @@ local result = Set.isEmpty({ key = true }) -- false
 
 *Related [count](#count)*
 
+## intersect
+
+Returns a new set containing only the values that are present in all given sets.
+
+```lua
+local set1 = Set.fromArray({ "a", "b", "c" })
+local set2 = Set.fromArray({ "b", "c", "d" })
+local result = Set.intersect(set1, set2)
+-- result is { b = true, c = true }
+```
+
+*Related [merge](#merge)*
+
 ## map
 
 Returns a new set where each value is converted with a mapping function. When the mapping function returns a `nil` value, the entry is removed.
@@ -87,6 +100,8 @@ local result = Set.merge(set1, set2)
 ```
 
 The function will skip `nil` values when merging.
+
+*Related [intersect](#intersect)*
 
 ## removeValues
 

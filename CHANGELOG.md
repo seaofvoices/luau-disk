@@ -1,5 +1,6 @@
 # Changelog
 
+- add `Set.intersect` ([#25](https://github.com/seaofvoices/luau-disk/pull/25))
 - add `Set.toArray` ([#24](https://github.com/seaofvoices/luau-disk/pull/24))
 - add `Set.removeValues` ([#23](https://github.com/seaofvoices/luau-disk/pull/23))
 - add `Set.filter` ([#22](https://github.com/seaofvoices/luau-disk/pull/22))
