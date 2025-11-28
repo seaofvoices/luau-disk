@@ -1,5 +1,6 @@
 # Changelog
 
+- add `Array.replaceAtIndex` ([#27](https://github.com/seaofvoices/luau-disk/pull/27))
 - add `Array.reverseFind`, `Array.reverseFindIndex`, `Array.reverseFindIndexByValue`, and `Array.reverseFindMap` ([#26](https://github.com/seaofvoices/luau-disk/pull/26))
 - add `Set.intersect` ([#25](https://github.com/seaofvoices/luau-disk/pull/25))
 - add `Set.toArray` ([#24](https://github.com/seaofvoices/luau-disk/pull/24))
