@@ -344,7 +344,7 @@ end, 3)
 -- result is { 'a', 'b', 'c', 'b', 'x', 'd' }
 ```
 
-*Related: [insertAfterIndex](#insertAfterIndex), [insertBefore](#insertBefore), [insertBeforeIndex](#insertBeforeIndex)*
+*Related: [insertAfterIndex](#insertafterindex), [insertBefore](#insertbefore), [insertBeforeIndex](#insertbeforeindex)*
 
 ## insertAfterIndex
 
@@ -363,7 +363,7 @@ local result = Array.insertAfterIndex({ 'a', 'b', 'c' }, 'x', 10)
 -- result is { 'a', 'b', 'c', 'x' }
 ```
 
-*Related: [insertAfter](#insertAfter), [insertBefore](#insertBefore), [insertBeforeIndex](#insertBeforeIndex)*
+*Related: [insertAfter](#insertafter), [insertBefore](#insertbefore), [insertBeforeIndex](#insertbeforeindex)*
 
 ## insertBefore
 
@@ -391,7 +391,7 @@ end, 3)
 -- result is { 'a', 'b', 'c', 'x', 'b', 'd' }
 ```
 
-*Related: [insertAfter](#insertAfter), [insertAfterIndex](#insertAfterIndex), [insertBeforeIndex](#insertBeforeIndex)*
+*Related: [insertAfter](#insertafter), [insertAfterIndex](#insertafterindex), [insertBeforeIndex](#insertbeforeindex)*
 
 ## insertBeforeIndex
 
@@ -410,7 +410,7 @@ local result = Array.insertBeforeIndex({ 'a', 'b', 'c' }, 'x', 10)
 -- result is { 'a', 'b', 'c', 'x' }
 ```
 
-*Related: [insertAfter](#insertAfter), [insertAfterIndex](#insertAfterIndex), [insertBefore](#insertBefore)*
+*Related: [insertAfter](#insertafter), [insertAfterIndex](#insertafterindex), [insertBefore](#insertbefore)*
 
 ## isArray
 
