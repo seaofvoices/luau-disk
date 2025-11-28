@@ -205,7 +205,7 @@ end)
 -- result is 2
 ```
 
-*Related: [contains](#contains), [findIndex](#findIndex), [findIndexByValue](#findIndexByValue), [findMap](#findMap)*
+*Related: [contains](#contains), [findIndex](#findIndex), [findIndexByValue](#findIndexByValue), [findMap](#findMap), [reverseFind](#reverseFind)*
 
 ## findIndex
 
@@ -218,7 +218,8 @@ end)
 -- result is 3
 ```
 
-*Related: [find](#find), [findIndexByValue](#findIndexByValue), [findMap](#findMap)*
+*Related: [find](#find), [findIndexByValue](#findIndexByValue), [findMap](#findMap), [reverseFindIndex](#reverseFindIndex)*
+
 
 ## findIndexByValue
 
@@ -229,7 +230,7 @@ local result = Array.findIndexByValue({ 'a', 'b', 'c', 'b', 'd' }, 'b')
 -- result is 2
 ```
 
-*Related: [find](#find), [findIndex](#findIndex), [findMap](#findMap)*
+*Related: [find](#find), [findIndex](#findIndex), [findMap](#findMap), [reverseFindIndexByValue](#reverseFindIndexByValue)*
 
 ## findMap
 
@@ -246,7 +247,7 @@ end)
 -- result is 'BANANA'
 ```
 
-*Related: [find](#find), [findIndex](#findIndex), [findIndexByValue](#findIndexByValue)*
+*Related: [find](#find), [findIndex](#findIndex), [findIndexByValue](#findIndexByValue), [reverseFindMap](#reverseFindMap)*
 
 ## flatMap
 
@@ -518,6 +519,25 @@ local result = Array.removeValues({ 'a', 'b', 'c', 'd' }, 'b', 'd')
 
 *Related [removeIndexes](#removeIndexes), [removeSortedIndexes](#removeSortedIndexes)*
 
+## replaceAtIndex
+
+Replaces the value at a specific index in an array with a new value. Returns a new array with the replacement, or the original array if the index is out of bounds or if the replacement value equals the current value.
+
+```lua
+local result = Array.replaceAtIndex({ 1, 2, 3, 4 }, 2, 99)
+-- result is { 1, 99, 3, 4 }
+
+-- Returns original array when index is out of bounds
+local original = { 1, 2, 3 }
+local result = Array.replaceAtIndex(original, 10, 99)
+-- result is the same array reference as original
+
+-- Returns original array when replacement value equals current value
+local original = { 1, 2, 3 }
+local result = Array.replaceAtIndex(original, 2, 2)
+-- result is the same array reference as original
+```
+
 ## reversed
 
 Create a new array but with the element in reverse order. For an array of less than 2 elements, this function will return the same array.
@@ -525,6 +545,96 @@ Create a new array but with the element in reverse order. For an array of less t
 ```lua
 local result = Array.reversed({ 1, 2, 3 }) --> { 3, 2, 1 }
 ```
+
+## reverseFind
+
+Finds the last element in an array that satisfies a condition, searching from the end.
+
+```lua
+local result = Array.reverseFind({1, 2, 3, 4, 5}, function(value)
+    return value % 2 == 0
+end)
+-- result is 4
+```
+
+Optionally, a starting index can be provided to begin the search from a specific position.
+
+```lua
+local result = Array.reverseFind({1, 2, 3, 4, 5}, function(value)
+    return value % 2 == 0
+end, 3)
+-- result is 2
+```
+
+*Related: [find](#find), [reverseFindIndex](#reverseFindIndex), [reverseFindIndexByValue](#reverseFindIndexByValue), [reverseFindMap](#reverseFindMap)*
+
+## reverseFindIndex
+
+Finds the index of the last element in an array that satisfies a condition, searching from the end.
+
+```lua
+local result = Array.reverseFindIndex({1, 2, 3, 4, 5}, function(value)
+    return value % 2 == 0
+end)
+-- result is 4
+```
+
+Optionally, a starting index can be provided to begin the search from a specific position.
+
+```lua
+local result = Array.reverseFindIndex({1, 2, 3, 4, 5}, function(value)
+    return value % 2 == 0
+end, 3)
+-- result is 2
+```
+
+*Related: [findIndex](#findIndex), [reverseFind](#reverseFind), [reverseFindIndexByValue](#reverseFindIndexByValue), [reverseFindMap](#reverseFindMap)*
+
+## reverseFindIndexByValue
+
+Finds the index of the last occurrence of a value in an array, searching from the end.
+
+```lua
+local result = Array.reverseFindIndexByValue({ 'a', 'b', 'c', 'b', 'd' }, 'b')
+-- result is 4
+```
+
+Optionally, a starting index can be provided to begin the search from a specific position.
+
+```lua
+local result = Array.reverseFindIndexByValue({ 'a', 'b', 'c', 'b', 'd' }, 'b', 3)
+-- result is 2
+```
+
+*Related: [findIndexByValue](#findIndexByValue), [reverseFind](#reverseFind), [reverseFindIndex](#reverseFindIndex), [reverseFindMap](#reverseFindMap)*
+
+## reverseFindMap
+
+Applies a mapping function to each element in an array, searching from the end, and returns the first non-nil result.
+
+```lua
+local result = Array.reverseFindMap({ 1, 2, 3, 4, 5 }, function(element)
+    if element % 2 == 0 then
+        return element * 2
+    end
+    return nil
+end)
+-- result is 8
+```
+
+Optionally, a starting index can be provided to begin the search from a specific position.
+
+```lua
+local result = Array.reverseFindMap({ 1, 2, 3, 4, 5 }, function(element)
+    if element % 2 == 0 then
+        return element * 2
+    end
+    return nil
+end, 3)
+-- result is 4
+```
+
+*Related: [findMap](#findMap), [reverseFind](#reverseFind), [reverseFindIndex](#reverseFindIndex), [reverseFindIndexByValue](#reverseFindIndexByValue)*
 
 ## sort
 
