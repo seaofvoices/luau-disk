@@ -291,6 +291,127 @@ end)
 -- result is {2, 4, 6, 8, 10}
 ```
 
+*Related: [fromTryFn](#fromTryFn)*
+
+## fromTryFn
+
+Generates an array by repeatedly applying a generating function, safely handling errors. The function stops when the generator returns `nil` or throws an error.
+
+```lua
+local result = Array.fromTryFn(function(index)
+	if index > 5 then
+		return nil
+	end
+	return index * 2
+end)
+-- result is {2, 4, 6, 8, 10}
+
+-- Stops on error
+local result = Array.fromTryFn(function(index)
+	if index > 3 then
+		error('terminate')
+	end
+	return index
+end)
+-- result is {1, 2, 3}
+```
+
+*Related: [fromFn](#fromFn)*
+
+## insertAfter
+
+Inserts a value after the first element in an array that satisfies a condition. If no matching element is found, the original array is returned unchanged.
+
+```lua
+local result = Array.insertAfter({ 'a', 'b', 'c', 'd' }, 'x', function(x)
+    return x == 'b'
+end)
+-- result is { 'a', 'b', 'x', 'c', 'd' }
+
+-- Returns original array when no match is found
+local result = Array.insertAfter({ 'a', 'b', 'c' }, 'x', function(x)
+    return x == 'z'
+end)
+-- result is { 'a', 'b', 'c' }
+```
+
+Optionally, a starting index can be provided to begin the search from a specific position.
+
+```lua
+local result = Array.insertAfter({ 'a', 'b', 'c', 'b', 'd' }, 'x', function(x)
+    return x == 'b'
+end, 3)
+-- result is { 'a', 'b', 'c', 'b', 'x', 'd' }
+```
+
+*Related: [insertAfterIndex](#insertAfterIndex), [insertBefore](#insertBefore), [insertBeforeIndex](#insertBeforeIndex)*
+
+## insertAfterIndex
+
+Inserts a value after a specific index in an array. If the index is less than 1, the value is inserted at the beginning. If the index is greater than the array length, the value is appended to the end.
+
+```lua
+local result = Array.insertAfterIndex({ 'a', 'b', 'c', 'd' }, 'x', 2)
+-- result is { 'a', 'b', 'x', 'c', 'd' }
+
+-- Inserts at beginning when index < 1
+local result = Array.insertAfterIndex({ 'a', 'b', 'c' }, 'x', 0)
+-- result is { 'x', 'a', 'b', 'c' }
+
+-- Appends to end when index > length
+local result = Array.insertAfterIndex({ 'a', 'b', 'c' }, 'x', 10)
+-- result is { 'a', 'b', 'c', 'x' }
+```
+
+*Related: [insertAfter](#insertAfter), [insertBefore](#insertBefore), [insertBeforeIndex](#insertBeforeIndex)*
+
+## insertBefore
+
+Inserts a value before the first element in an array that satisfies a condition. If no matching element is found, the original array is returned unchanged.
+
+```lua
+local result = Array.insertBefore({ 'a', 'b', 'c', 'd' }, 'x', function(x)
+    return x == 'b'
+end)
+-- result is { 'a', 'x', 'b', 'c', 'd' }
+
+-- Returns original array when no match is found
+local result = Array.insertBefore({ 'a', 'b', 'c' }, 'x', function(x)
+    return x == 'z'
+end)
+-- result is { 'a', 'b', 'c' }
+```
+
+Optionally, a starting index can be provided to begin the search from a specific position.
+
+```lua
+local result = Array.insertBefore({ 'a', 'b', 'c', 'b', 'd' }, 'x', function(x)
+    return x == 'b'
+end, 3)
+-- result is { 'a', 'b', 'c', 'x', 'b', 'd' }
+```
+
+*Related: [insertAfter](#insertAfter), [insertAfterIndex](#insertAfterIndex), [insertBeforeIndex](#insertBeforeIndex)*
+
+## insertBeforeIndex
+
+Inserts a value before a specific index in an array. If the index is less than 1, the value is inserted at the beginning. If the index is greater than the array length, the value is appended to the end.
+
+```lua
+local result = Array.insertBeforeIndex({ 'a', 'b', 'c', 'd' }, 'x', 2)
+-- result is { 'a', 'x', 'b', 'c', 'd' }
+
+-- Inserts at beginning when index < 1
+local result = Array.insertBeforeIndex({ 'a', 'b', 'c' }, 'x', 0)
+-- result is { 'x', 'a', 'b', 'c' }
+
+-- Appends to end when index > length
+local result = Array.insertBeforeIndex({ 'a', 'b', 'c' }, 'x', 10)
+-- result is { 'a', 'b', 'c', 'x' }
+```
+
+*Related: [insertAfter](#insertAfter), [insertAfterIndex](#insertAfterIndex), [insertBefore](#insertBefore)*
+
 ## isArray
 
 Given any value, returns `true` or `false` if it is an array.
