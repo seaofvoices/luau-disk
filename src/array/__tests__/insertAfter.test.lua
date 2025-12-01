@@ -88,7 +88,7 @@ it('calls predicate with correct arguments', function()
         return x == 20
     end)
 
-    expect(callCount).toEqual(2) -- Should stop after finding match
+    expect(callCount).toEqual(2)
     expect(calledValues).toEqual({ 10, 20 })
 end)
 
