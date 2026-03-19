@@ -6,11 +6,10 @@ local function binarySearchByKey<T, K>(array: { T }, value: K, keyFn: (element: 
 
     local left = 1
     local right = length
-    local value: number = value :: any
 
     while left <= right do
         local mid = math.floor((left + right) / 2)
-        local midElement: number = keyFn(array[mid]) :: any
+        local midElement = keyFn(array[mid]) :: any
 
         if midElement < value then
             left = mid + 1

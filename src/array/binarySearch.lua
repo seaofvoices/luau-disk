@@ -8,11 +8,9 @@ local function binarySearch<T>(array: { T }, value: T, compareFn: ((a: T, b: T) 
     local right = length
 
     if compareFn == nil then
-        local value: number = value :: any
-
         while left <= right do
             local mid = math.floor((left + right) / 2)
-            local midElement: number = array[mid] :: any
+            local midElement = array[mid] :: any
 
             if midElement < value then
                 left = mid + 1
