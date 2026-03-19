@@ -1,5 +1,6 @@
 # Changelog
 
+- add `Array.findClosest`, `Array.findClosestBy`, `Array.findClosestIndex` and `Array.findClosestIndexBy` functions ([#33](https://github.com/seaofvoices/luau-disk/pull/33))
 - add `Array.chunks` ([#32](https://github.com/seaofvoices/luau-disk/pull/32))
 - add `Array.repeatSequence` ([#31](https://github.com/seaofvoices/luau-disk/pull/31))
 - add `Array.binarySearch` and `Array.binarySearchByKey` ([#30](https://github.com/seaofvoices/luau-disk/pull/30))
