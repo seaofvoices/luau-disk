@@ -19,6 +19,7 @@ If you are not familiar with this kind of utility functions, don't get overwhelm
 Once you feel comfortable, you may want to take a look at these:
 
 - [flatMap](#flatMap)
+- [pluck](#pluck)
 - [all](#all) and [any](#any)
 - [reduce](#reduce)
 
@@ -603,7 +604,7 @@ end)
 -- squared is {1, 4, 9, 16}
 ```
 
-*Related [flatMap]([#flatMap)*
+*Related [flatMap]([#flatMap), [pluck](#pluck)*
 
 ## maximum
 
@@ -674,6 +675,33 @@ end)
 ```
 
 *Related [filter](#filter)*
+
+## pluck
+
+Builds a new array by reading one key or a sequence of keys from each element (nested lookup).
+
+If a value along the path is `nil`, or if indexing fails (for example the element is not a table), that element is skipped.
+
+```lua
+local rows = {
+    { id = 1, name = 'Ada' },
+    { id = 2, name = 'Grace' },
+}
+local names = Array.pluck(rows, 'name')
+-- names is { 'Ada', 'Grace' }
+
+local nested = {
+    { meta = { score = 10 } },
+    { meta = { score = 20 } },
+}
+local scores = Array.pluck(nested, { 'meta', 'score' })
+-- scores is { 10, 20 }
+
+local same = Array.pluck(rows, {})
+-- same is the same table reference as rows
+```
+
+*Related: [map](#map)*
 
 ## pop
 
