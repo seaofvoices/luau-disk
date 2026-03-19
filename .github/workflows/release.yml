@@ -91,8 +91,8 @@ jobs:
             path: build/disk.rbxm
             asset-type: application/octet-stream
 
-          - artifact-name: disk-bundled.lua
-            path: build/disk.lua
+          - artifact-name: disk-bundled.luau
+            path: build/disk.luau
             asset-type: text/plain
 
     steps:
