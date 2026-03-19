@@ -176,6 +176,8 @@ local result = Array.concat({ "start" }, { 1, 3, 5 }, { "end" })
 --    result = { "start", 1, 3, 5, "end" }
 ```
 
+*Related: [repeatSequence](#repeatsequence)*
+
 ## copy
 
 Makes a **shallow** copy of an array.
@@ -690,6 +692,24 @@ local result = Array.removeValues({ 'a', 'b', 'c', 'd' }, 'b', 'd')
 ```
 
 *Related [removeIndexes](#removeIndexes), [removeSortedIndexes](#removeSortedIndexes)*
+
+## repeatSequence
+
+Builds a new array by laying the same sequence end-to-end `count` times.
+
+```lua
+local result = Array.repeatSequence({ 1, 2, 3 }, 3)
+-- result is { 1, 2, 3, 1, 2, 3, 1, 2, 3 }
+
+local empty = Array.repeatSequence({ 1, 2, 3 }, 0)
+-- empty is {}
+
+local original = { 'a', 'b' }
+local same = Array.repeatSequence(original, 1)
+-- same is the same table reference as original
+```
+
+*Related: [concat](#concat)*
 
 ## replaceAtIndex
 

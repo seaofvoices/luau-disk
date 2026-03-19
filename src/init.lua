@@ -48,6 +48,7 @@ local Disk = {
         removeIndexes = require('./array/removeIndexes'),
         removeSortedIndexes = require('./array/removeSortedIndexes'),
         removeValues = require('./array/removeValues'),
+        repeatSequence = require('./array/repeatSequence'),
         replaceAtIndex = require('./array/replaceAtIndex'),
         reverse = require('./array/reverse'),
         reversed = require('./array/reverse'),
