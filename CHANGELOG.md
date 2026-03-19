@@ -1,5 +1,7 @@
 # Changelog
 
+- add `Array.pluck` ([#37](https://github.com/seaofvoices/luau-disk/pull/37))
+- migrate the project to use the `luau` file extension ([#36](https://github.com/seaofvoices/luau-disk/pull/36))
 - add `Array.difference` and `Array.differenceSymmetric` ([#35](https://github.com/seaofvoices/luau-disk/pull/35))
 - fix `Array.flatten` to respect the `depth` parameter when provided ([#34](https://github.com/seaofvoices/luau-disk/pull/34))
 - add `Array.findClosest`, `Array.findClosestBy`, `Array.findClosestIndex` and `Array.findClosestIndexBy` functions ([#33](https://github.com/seaofvoices/luau-disk/pull/33))
