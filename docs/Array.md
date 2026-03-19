@@ -243,6 +243,34 @@ local result = Array.deduplicateByKey({
 
 *Related: [deduplicate](#deduplicate)*
 
+## difference
+
+Filters the first array by removing any element that appears in at least one of the other arrays. Elements are compared using `table.find`.
+
+If no additional arrays are provided, the original array is returned unchanged.
+
+```lua
+local result = Array.difference({ 1, 2, 3, 4 }, { 2, 3, 5 })
+-- result is { 1, 4 }
+-- note: 5 is in the second array but is *not added* to the result
+```
+
+*Related: [differenceSymmetric](#differenceSymmetric), [filter](#filter)*
+
+## differenceSymmetric
+
+Returns elements that are unique to **each array**.
+
+Elements from the first array appear first in the result, followed by surviving elements from each subsequent array in order.
+
+```lua
+-- 2 and 3 are shared, so they are removed from both sides
+local result = Array.differenceSymmetric({ 1, 2, 3, 4 }, { 2, 3, 5 })
+-- result is { 1, 4, 5 }
+```
+
+*Related: [difference](#difference), [filter](#filter)*
+
 ## filter
 
 Creates an array from only elements that satisfy a condition.
