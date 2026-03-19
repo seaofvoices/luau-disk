@@ -267,7 +267,71 @@ end)
 -- result is 2
 ```
 
-*Related: [contains](#contains), [findIndex](#findIndex), [findIndexByValue](#findIndexByValue), [findMap](#findMap), [reverseFind](#reverseFind)*
+*Related: [contains](#contains), [findClosest](#findClosest), [findClosestBy](#findClosestBy), [findIndex](#findIndex), [findIndexByValue](#findIndexByValue), [findMap](#findMap), [reverseFind](#reverseFind)*
+
+## findClosest
+
+Returns the element whose value is **numerically** closest to `target`, using `math.abs(element - target)` as distance. An empty array yields `nil`. When two elements have the same distance, the first one is chosen.
+
+An optional `start` index limits which elements are considered.
+
+```lua
+local result = Array.findClosest({ 1, 5, 3, 9, 7 }, 6)
+-- result is 5
+
+local result = Array.findClosest({ 1, 5, 3, 9, 7 }, 6, 3)
+-- result is 7 (only indices 3..end are considered: 3, 9, 7)
+```
+
+*Related: [findClosestBy](#findClosestBy), [findClosestIndex](#findClosestIndex), [findClosestIndexBy](#findClosestIndexBy)*
+
+## findClosestBy
+
+Returns the element whose distance to a target is smallest, where the distance is determined by a `getDistance` function.
+
+An optional `start` index limits which elements are considered.
+
+```lua
+local players = {
+    { name = 'Alice', score = 100 },
+    { name = 'Bob', score = 85 },
+    { name = 'Charlie', score = 92 },
+}
+local result = Array.findClosestBy(players, function(player)
+    return player.score - 90
+end)
+-- result is { name = 'Charlie', score = 92 }
+```
+
+*Related: [findClosest](#findClosest), [findClosestIndex](#findClosestIndex), [findClosestIndexBy](#findClosestIndexBy)*
+
+## findClosestIndex
+
+Returns the index of the element in the array that is numerically closest to `target`.
+
+An optional `start` index limits which elements are considered.
+
+```lua
+local result = Array.findClosestIndex({ 1, 5, 3, 9, 7 }, 6)
+-- result is 2 (value 5 is closest to 6)
+```
+
+*Related: [findClosest](#findClosest), [findClosestBy](#findClosestBy), [findClosestIndexBy](#findClosestIndexBy), [findIndex](#findIndex)*
+
+## findClosestIndexBy
+
+Returns the index of the element whose distance to a target is smallest, where the distance is determined by a `getDistance` function.
+
+An optional `start` index limits which elements are considered.
+
+```lua
+local result = Array.findClosestIndexBy({ 1, 5, 3, 9, 7 }, function(x)
+    return x - 6
+end)
+-- result is 2
+```
+
+*Related: [findClosest](#findClosest), [findClosestBy](#findClosestBy), [findClosestIndex](#findClosestIndex), [findIndex](#findIndex)*
 
 ## findIndex
 
@@ -280,7 +344,7 @@ end)
 -- result is 3
 ```
 
-*Related: [find](#find), [findIndexByValue](#findIndexByValue), [findMap](#findMap), [reverseFindIndex](#reverseFindIndex)*
+*Related: [find](#find), [findClosestIndex](#findClosestIndex), [findClosestIndexBy](#findClosestIndexBy), [findIndexByValue](#findIndexByValue), [findMap](#findMap), [reverseFindIndex](#reverseFindIndex)*
 
 
 ## findIndexByValue
