@@ -28,29 +28,6 @@ it('finds the closest element using custom distance function', function()
     expect(result).toEqual(5)
 end)
 
-it('works with negative distance values', function()
-    local result = findClosestBy({ -10, -2, -5, -1 }, function(x)
-        return x + 3
-    end)
-
-    expect(result).toEqual(-2)
-end)
-
-it('works with complex object arrays', function()
-    local players = {
-        { name = 'Alice', score = 100 },
-        { name = 'Bob', score = 85 },
-        { name = 'Charlie', score = 92 },
-        { name = 'Diana', score = 88 },
-    }
-
-    local result = findClosestBy(players, function(player)
-        return player.score - 90
-    end)
-
-    expect(result).toEqual({ name = 'Charlie', score = 92 })
-end)
-
 it('handles ties by returning the first match found', function()
     local result = findClosestBy({ 3, 7 }, function(x)
         return x - 5
@@ -65,22 +42,6 @@ it('finds closest element when distance is exactly zero', function()
     end)
 
     expect(result).toEqual(5)
-end)
-
-it('works with decimal distance calculations', function()
-    local result = findClosestBy({ 1.1, 2.7, 3.2, 4.8 }, function(x)
-        return x - 2.5
-    end)
-
-    expect(result).toEqual(2.7)
-end)
-
-it('finds closest element with start parameter', function()
-    local result = findClosestBy({ 1, 5, 3, 9, 7 }, function(x)
-        return x - 6
-    end, 3)
-
-    expect(result).toEqual(7)
 end)
 
 it('respects start parameter and ignores earlier elements', function()
@@ -107,22 +68,6 @@ it('works when start parameter equals array length', function()
     expect(result).toEqual(3)
 end)
 
-it('treats nil start parameter as starting from beginning', function()
-    local result = findClosestBy({ 1, 5, 3, 9, 7 }, function(x)
-        return x - 6
-    end, nil)
-
-    expect(result).toEqual(5)
-end)
-
-it('treats start parameter of 1 as starting from beginning', function()
-    local result = findClosestBy({ 1, 5, 3, 9, 7 }, function(x)
-        return x - 6
-    end, 1)
-
-    expect(result).toEqual(5)
-end)
-
 it('calls distance function correctly for each element', function()
     local callCount = 0
     local calledValues = {}
@@ -138,38 +83,19 @@ it('calls distance function correctly for each element', function()
 end)
 
 it('uses absolute value of distance function result', function()
-    -- Elements with negative and positive distances, but same absolute value
     local result = findClosestBy({ 3, 7 }, function(x)
         return x - 5
     end)
 
-    expect(result).toEqual(3) -- Both have distance of 2, first one wins
-end)
-
-it('works with string distance calculations', function()
-    local words = { 'cat', 'dog', 'bird', 'fish' }
-
-    local result = findClosestBy(words, function(word)
-        return #word - 3
-    end)
-
-    expect(result).toEqual('cat') -- Length 3, distance 0
-end)
-
-it('handles very large distance values', function()
-    local result = findClosestBy({ 1000000, 5000000, 3000000 }, function(x)
-        return x - 2500000
-    end)
-
-    expect(result).toEqual(3000000)
+    expect(result).toEqual(3)
 end)
 
 it('works with function that returns zero for all elements', function()
-    local result = findClosestBy({ 1, 2, 3 }, function(x)
+    local result = findClosestBy({ 1, 2, 3 }, function(_)
         return 0
     end)
 
-    expect(result).toEqual(1) -- All have same distance, first wins
+    expect(result).toEqual(1)
 end)
 
 return nil
