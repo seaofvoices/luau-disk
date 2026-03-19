@@ -11,6 +11,7 @@ local Disk = {
         averageBy = require('./array/averageBy'),
         binarySearch = require('./array/binarySearch'),
         binarySearchByKey = require('./array/binarySearchByKey'),
+        chunks = require('./array/chunks'),
         concat = require('./array/concat'),
         contains = require('./array/contains'),
         copy = require('./array/copy'),

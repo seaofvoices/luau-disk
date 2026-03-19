@@ -154,6 +154,15 @@ end)
 
 *Related: [binarySearch](#binarySearch), [find](#find), [sortByKey](#sortByKey)*
 
+## chunks
+
+Splits an array into consecutive groups of up to `size` elements. Note that the last group may be shorter.
+
+```lua
+local result = Array.chunks({ 1, 2, 3, 4, 5, 6, 7, 8 }, 3)
+-- result is { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8 } }
+```
+
 ## contains
 
 Verifies if an array contains a certain value.
