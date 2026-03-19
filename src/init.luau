@@ -45,6 +45,7 @@ local Disk = {
         minimum = require('./array/minimum'),
         minimumBy = require('./array/minimumBy'),
         partition = require('./array/partition'),
+        pluck = require('./array/pluck'),
         pop = require('./array/pop'),
         popFirst = require('./array/popFirst'),
         product = require('./array/product'),
