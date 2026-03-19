@@ -1,5 +1,7 @@
 # Changelog
 
+## 0.1.2
+
 - add `Array.pluck` ([#37](https://github.com/seaofvoices/luau-disk/pull/37))
 - migrate the project to use the `luau` file extension ([#36](https://github.com/seaofvoices/luau-disk/pull/36))
 - add `Array.difference` and `Array.differenceSymmetric` ([#35](https://github.com/seaofvoices/luau-disk/pull/35))
