@@ -1,6 +1,20 @@
+<div align="center">
+
+[![checks](https://github.com/seaofvoices/luau-disk/actions/workflows/test.yml/badge.svg)](https://github.com/seaofvoices/luau-disk/actions/workflows/test.yml)
+![version](https://img.shields.io/github/package-json/v/seaofvoices/luau-disk)
+[![GitHub top language](https://img.shields.io/github/languages/top/seaofvoices/luau-disk)](https://github.com/luau-lang/luau)
+![license](https://img.shields.io/npm/l/luau-disk)
+![npm](https://img.shields.io/npm/dt/luau-disk)
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/seaofvoices)
+
+</div>
+
 # Disk
 
 A collection of functions to operate on Lua/Luau data structures as immutable data.
+
+*[Link to the documentation](./docs/index.md).*
 
 # Installation
 
