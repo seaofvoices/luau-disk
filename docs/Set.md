@@ -12,8 +12,9 @@ If you are not familiar with this kind of utility functions, don't get overwhelm
 
 - [count](#count)
 - [fromArray](#fromarray)
+- [fromFn](#fromfn)
 - [merge](#merge)
-- [removeValues](#removeValues)
+- [removeValues](#removevalues)
 - [toArray](#toarray)
 
 ## count
@@ -51,6 +52,47 @@ local result = Set.fromArray({ "a", "b", "c" })
 ```
 
 *Related [toArray](#toarray)*
+
+## fromFn
+
+Generates a set by repeatedly applying a generating function.
+
+```lua
+local result = Set.fromFn(function(index)
+	if index > 5 then
+		return nil
+	end
+	return index * 2
+end)
+-- result is { 2 = true, 4 = true, 6 = true, 8 = true, 10 = true }
+```
+
+*Related: [fromTryFn](#fromTryFn)*
+
+## fromTryFn
+
+Generates a set by repeatedly applying a generating function, safely handling errors. The function stops when the generator returns `nil` or throws an error.
+
+```lua
+local result = Set.fromTryFn(function(index)
+	if index > 5 then
+		return nil
+	end
+	return index * 2
+end)
+-- result is { 2 = true, 4 = true, 6 = true, 8 = true, 10 = true }
+
+-- Stops on error
+local result = Set.fromTryFn(function(index)
+	if index > 3 then
+		error('terminate')
+	end
+	return index
+end)
+-- result is { [1] = true, [2] = true, [3] = true }
+```
+
+*Related: [fromFn](#fromFn)*
 
 ## isEmpty
 
