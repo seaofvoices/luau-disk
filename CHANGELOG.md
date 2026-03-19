@@ -1,5 +1,6 @@
 # Changelog
 
+- add `Array.difference` and `Array.differenceSymmetric` ([#35](https://github.com/seaofvoices/luau-disk/pull/35))
 - fix `Array.flatten` to respect the `depth` parameter when provided ([#34](https://github.com/seaofvoices/luau-disk/pull/34))
 - add `Array.findClosest`, `Array.findClosestBy`, `Array.findClosestIndex` and `Array.findClosestIndexBy` functions ([#33](https://github.com/seaofvoices/luau-disk/pull/33))
 - add `Array.chunks` ([#32](https://github.com/seaofvoices/luau-disk/pull/32))
