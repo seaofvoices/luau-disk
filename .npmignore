@@ -24,7 +24,7 @@ sourcemap.json
 *.project.json
 
 **/__tests__
-**/*.test.lua
+**/*.test.luau
 jest.config.luau
 
 *.rbxl

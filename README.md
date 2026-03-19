@@ -35,7 +35,7 @@ npm install luau-disk
 Versions of Disk are also pre-built and linked to [GitHub releases](https://github.com/seaofvoices/luau-disk/releases):
 
 - `disk.rbxm` is a Roblox model file
-- `disk-bundled.lua` is a single-file version of the library (with Luau type annotations removed)
+- `disk-bundled.luau` is a single-file version of the library
 
 ## Other Lua Environments Support
 

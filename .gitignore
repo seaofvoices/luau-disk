@@ -6,7 +6,7 @@
 /*.rbxm
 /*.rbxmx
 
-/jest.lua
+/jest.config.luau
 /roblox
 /node_modules
 
