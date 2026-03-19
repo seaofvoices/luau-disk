@@ -1,5 +1,6 @@
 # Changelog
 
+- add `Array.repeatSequence` ([#31](https://github.com/seaofvoices/luau-disk/pull/31))
 - add `Array.binarySearch` and `Array.binarySearchByKey` ([#30](https://github.com/seaofvoices/luau-disk/pull/30))
 - add `Set.fromFn` and `Set.fromTryFn` ([#29](https://github.com/seaofvoices/luau-disk/pull/29))
 - add `Array.insertAfter`, `Array.insertAfterIndex`, `Array.insertBefore` and `Array.insertBeforeIndex` ([#28](https://github.com/seaofvoices/luau-disk/pull/28))
