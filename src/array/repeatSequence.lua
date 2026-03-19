@@ -10,7 +10,7 @@ local function repeatSequence<T>(array: { T }, count: number): { T }
     local result = table.clone(array)
     local length = #array
 
-    for i = 1, count - 1 do
+    for _ = 1, count - 1 do
         for j = 1, length do
             table.insert(result, array[j])
         end
