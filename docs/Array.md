@@ -103,6 +103,57 @@ end)
 
 *Related: [average](#average)*
 
+## binarySearch
+
+Finds the index of a value in a **sorted** array using binary search. Returns `nil` if the value does not exist.
+
+By default, this function compares values with `<` and `>`. It will work with arrays sorted in ascending order.
+
+```lua
+local result = Array.binarySearch({ 1, 3, 5, 7, 9 }, 7)
+-- result is 4
+
+local result = Array.binarySearch({ "apple", "banana", "cherry" }, "banana")
+-- result is 2
+```
+
+An optional comparator function can be given to support custom sorting order. This implies that the array will be sorted accordingly.
+
+```lua
+local result = Array.binarySearch({ 9, 7, 5, 3, 1 }, 5, function(a, b)
+	if a > b then
+		return -1
+	elseif a < b then
+		return 1
+	end
+	return 0
+end)
+-- result is 3
+```
+
+*Related: [binarySearchByKey](#binarySearchByKey), [findIndexByValue](#findIndexByValue), [sort](#sort), [sortByKey](#sortByKey)*
+
+## binarySearchByKey
+
+Finds the index of an element in a **sorted** array by comparing a derived key. Returns `nil` if no element has the requested key.
+
+This function extracts a key from each element with `keyFn` and performs binary search against the provided value. It assumes the array is already sorted by that derived key. If needed, use `Array.sortByKey()` with the same `keyFn` to sort the array.
+
+```lua
+local players = {
+	{ id = 10, name = "Alice" },
+	{ id = 20, name = "Bob" },
+	{ id = 30, name = "Charlie" },
+}
+
+local result = Array.binarySearchByKey(players, "Charlie", function(player)
+	return player.name
+end)
+-- result is 3
+```
+
+*Related: [binarySearch](#binarySearch), [find](#find), [sortByKey](#sortByKey)*
+
 ## contains
 
 Verifies if an array contains a certain value.
