@@ -7,6 +7,15 @@
   },
   "license": "MIT",
   "main": "./src/init.luau",
+  "keywords": [
+    "luau",
+    "roblox",
+    "lua",
+    "data",
+    "immutable",
+    "react",
+    "roact"
+  ],
   "scripts": {
     "prepare": "npmluau",
     "test:roblox": "sh ./scripts/roblox-test.sh",
