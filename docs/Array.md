@@ -36,7 +36,7 @@ local areAbove5 = Array.all({30, 6, 8, 10}, function(value: number)
 end)
 
 -- result is false because the function will return false for 6
-local areAbove5 = Array.all({30, 6, 8, 10}, function(value: number)
+local areAbove7 = Array.all({30, 6, 8, 10}, function(value: number)
 	return value > 7
 end)
 
@@ -64,17 +64,17 @@ As soon as an element satisfies the condition, the condition will not be verifie
 
 ```lua
 -- result is true because the function will return true for 8
-local areAbove5 = Array.all({3, 7, 8, 3}, function(value: number)
+local has8 = Array.any({3, 7, 8, 3}, function(value: number)
 	return value == 8
 end)
 
--- result is false because the function will return false for 6
-local areAbove5 = Array.all({30, 6, 8, 10}, function(value: number)
-	return value > 7
+-- result is false because all elements are <= 8
+local hasValueAbove8 = Array.any({2, 6, 8, 1}, function(value: number)
+	return value > 8
 end)
 
 -- result is always false when the array is empty
-local areAbove5 = Array.all({}, function(value: number)
+local hasValueAbove5 = Array.any({}, function(value: number)
 	return value > 5
 end)
 ```
