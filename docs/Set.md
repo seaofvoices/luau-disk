@@ -26,7 +26,7 @@ local result = Set.count({ a = true, b = true })
 -- result is 2
 ```
 
-*Related [isEmpty](#isempty)*
+*Related: [isEmpty](#isempty)*
 
 ## filter
 
@@ -40,7 +40,7 @@ end)
 -- result is { 2 = true, 4 = true, 6 = true }
 ```
 
-*Related [removeValues](#removevalues)*
+*Related: [removeValues](#removevalues)*
 
 ## fromArray
 
@@ -51,7 +51,7 @@ local result = Set.fromArray({ "a", "b", "c" })
 -- result is { a = true, b = true, c = true }
 ```
 
-*Related [toArray](#toarray)*
+*Related: [toArray](#toarray)*
 
 ## fromFn
 
@@ -67,7 +67,7 @@ end)
 -- result is { 2 = true, 4 = true, 6 = true, 8 = true, 10 = true }
 ```
 
-*Related: [fromTryFn](#fromTryFn)*
+*Related: [fromTryFn](#fromtryfn)*
 
 ## fromTryFn
 
@@ -92,7 +92,7 @@ end)
 -- result is { [1] = true, [2] = true, [3] = true }
 ```
 
-*Related: [fromFn](#fromFn)*
+*Related: [fromFn](#fromfn)*
 
 ## isEmpty
 
@@ -103,7 +103,7 @@ local result = Set.isEmpty({ }) --> true
 local result = Set.isEmpty({ key = true }) -- false
 ```
 
-*Related [count](#count)*
+*Related: [count](#count)*
 
 ## intersect
 
@@ -116,7 +116,7 @@ local result = Set.intersect(set1, set2)
 -- result is { b = true, c = true }
 ```
 
-*Related [merge](#merge)*
+*Related: [merge](#merge)*
 
 ## map
 
@@ -143,7 +143,7 @@ local result = Set.merge(set1, set2)
 
 The function will skip `nil` values when merging.
 
-*Related [intersect](#intersect)*
+*Related: [intersect](#intersect)*
 
 ## removeValues
 
@@ -157,7 +157,7 @@ local result = Set.removeValues(set, "b")
 
 **Note:** This function returns the same set if no values are given or if the values to remove are not in the set.
 
-*Related [filter](#filter)*
+*Related: [filter](#filter)*
 
 ## toArray
 
@@ -171,4 +171,4 @@ local result = Set.toArray(set)
 
 **Note:** Lua/Luau does not guarantee the iteration order of dictionary-like tables, so this function does not guarantee the ordering of the values in the resulting array.
 
-*Related [fromArray](#fromarray)*
+*Related: [fromArray](#fromarray)*

@@ -36,7 +36,7 @@ local result = Map.count({ a = "A", b = "B" })
 -- result is 2
 ```
 
-*Related [isEmpty](#isEmpty)*
+*Related: [isEmpty](#isempty)*
 
 # entries
 
@@ -54,7 +54,7 @@ local result = Map.entries({ a = "A", b = "B" }, "letter", "upper")
 -- result is {{ letter = "a", upper = "A"}, { letter = "b", upper = "B"}}
 ```
 
-*Related [fromEntries](#fromEntries)*
+*Related: [fromEntries](#fromentries)*
 
 # fromEntries
 
@@ -72,7 +72,7 @@ local result = Map.fromEntries({{ letter = "a", upper = "A"}, { letter = "b", up
 -- result is { a = "A", b = "B" }
 ```
 
-*Related [entries](#entries)*
+*Related: [entries](#entries)*
 
 # invert
 
@@ -92,7 +92,7 @@ local result = Map.isEmpty({ }) --> true
 local result = Map.isEmpty({ key = "" }) -- false
 ```
 
-*Related [count](#count)*
+*Related: [count](#count)*
 
 # keys
 
@@ -104,7 +104,7 @@ local result = keys({ a = true, b = false }) --> { 'a', 'b' }
 
 **Note:** Lua/Luau does not guarantee the iteration order of maps, so this function does not guarantee the ordering of the keys.
 
-*Related [values](#values)*
+*Related: [values](#values)*
 
 # mapEntries
 
@@ -117,7 +117,7 @@ end)
 -- result is { A = "1", B  = "2", C = "3" }
 ```
 
-*Related [mapValues](#mapValues)*
+*Related: [mapValues](#mapvalues)*
 
 # mapValues
 
@@ -128,7 +128,7 @@ local result = Map.mapValues({ a = 1, b = 2, c = 3 }, tostring)
 -- result is { a = "1", b  = "2", c = "3" }
 ```
 
-*Related [mapEntries](#mapEntries)*
+*Related: [mapEntries](#mapentries)*
 
 # merge
 
@@ -162,4 +162,4 @@ local result = keys({ a = true, b = false }) --> { true, false }
 
 **Note:** Lua/Luau does not guarantee the iteration order of maps, so this function does not guarantee the ordering of the values.
 
-*Related [keys](#keys)*
+*Related: [keys](#keys)*

@@ -18,7 +18,7 @@ If you are not familiar with this kind of utility functions, don't get overwhelm
 
 Once you feel comfortable, you may want to take a look at these:
 
-- [flatMap](#flatMap)
+- [flatMap](#flatmap)
 - [pluck](#pluck)
 - [all](#all) and [any](#any)
 - [reduce](#reduce)
@@ -36,7 +36,7 @@ local areAbove5 = Array.all({30, 6, 8, 10}, function(value: number)
 end)
 
 -- result is false because the function will return false for 6
-local areAbove5 = Array.all({30, 6, 8, 10}, function(value: number)
+local areAbove7 = Array.all({30, 6, 8, 10}, function(value: number)
 	return value > 7
 end)
 
@@ -50,10 +50,11 @@ end)
 
 ## alternate
 
-Creates a new array from multiple arrays, where the elements are taken one by one into each of the provided array.
+Creates a new array from multiple arrays, where the elements are taken one by one into each of the provided arrays.
 
 ```lua
-local result = alternate({ 2, 4 }, { 'a', 'b' }) --> { 2, 'a', 4, 'b' }
+local result = Array.alternate({ 2, 4 }, { 'a', 'b' })
+-- result is { 2, 'a', 4, 'b' }
 ```
 
 ## any
@@ -64,17 +65,17 @@ As soon as an element satisfies the condition, the condition will not be verifie
 
 ```lua
 -- result is true because the function will return true for 8
-local areAbove5 = Array.all({3, 7, 8, 3}, function(value: number)
+local has8 = Array.any({3, 7, 8, 3}, function(value: number)
 	return value == 8
 end)
 
--- result is false because the function will return false for 6
-local areAbove5 = Array.all({30, 6, 8, 10}, function(value: number)
-	return value > 7
+-- result is false because all elements are <= 8
+local hasValueAbove8 = Array.any({2, 6, 8, 1}, function(value: number)
+	return value > 8
 end)
 
 -- result is always false when the array is empty
-local areAbove5 = Array.all({}, function(value: number)
+local hasValueAbove5 = Array.any({}, function(value: number)
 	return value > 5
 end)
 ```
@@ -89,7 +90,7 @@ Calculates the average value from an array of numbers.
 local result = Array.average({4, 6, 8, 8}) --> 6.5
 ```
 
-*Related: [averageBy](#averageBy)*
+*Related: [averageBy](#averageby)*
 
 ## averageBy
 
@@ -99,7 +100,7 @@ Calculates the average value of an array given a mapping function that produces 
 local result = Array.averageBy({"hello", " ", "world", "!"}, function(value)
     return string.len(value)
 end)
--- result is 4
+-- result is 3
 ```
 
 *Related: [average](#average)*
@@ -132,7 +133,7 @@ end)
 -- result is 3
 ```
 
-*Related: [binarySearchByKey](#binarySearchByKey), [findIndexByValue](#findIndexByValue), [sort](#sort), [sortByKey](#sortByKey)*
+*Related: [binarySearchByKey](#binarysearchbykey), [findIndexByValue](#findindexbyvalue), [sort](#sort), [sortByKey](#sortbykey)*
 
 ## binarySearchByKey
 
@@ -153,7 +154,7 @@ end)
 -- result is 3
 ```
 
-*Related: [binarySearch](#binarySearch), [find](#find), [sortByKey](#sortByKey)*
+*Related: [binarySearch](#binarysearch), [find](#find), [sortByKey](#sortbykey)*
 
 ## chunks
 
@@ -173,11 +174,11 @@ local result = Array.contains({"hello", "world", "!"}, "!")
 -- result is true
 ```
 
-*Related: [find](#find), [findIndex](#findIndex), [findIndexByValue](#findIndexByValue), [findMap](#findMap)*
+*Related: [find](#find), [findIndex](#findindex), [findIndexByValue](#findindexbyvalue), [findMap](#findmap)*
 
 ## concat
 
-Takes multiple arrays and concat (chain) them into a single array.
+Takes multiple arrays and concats (chain) them into a single array.
 
 ```lua
 local result = Array.concat({ 1, 2 }, { 3, 4 }) -- { 1, 2, 3, 4 }
@@ -205,7 +206,7 @@ print(value[1] == result[1] and value[2] == result[2]) -- true
 Count the amount of elements that satisfy a predicate.
 
 ```lua
-local array = { 'banana', 'cherry', 'date', 'blueberry' },
+local array = { 'banana', 'cherry', 'date', 'blueberry' }
 local result = count(array, function(value: string)
     return #value > 5
 end)
@@ -221,7 +222,7 @@ Removes duplicate elements from an array.
 local result = Array.deduplicate({1, 2, 3, 2, 4, 5, 3}) --> {1, 2, 3, 4, 5}
 ```
 
-*Related: [deduplicateByKey](#deduplicateByKey)*
+*Related: [deduplicateByKey](#deduplicatebykey)*
 
 ## deduplicateByKey
 
@@ -256,7 +257,7 @@ local result = Array.difference({ 1, 2, 3, 4 }, { 2, 3, 5 })
 -- note: 5 is in the second array but is *not added* to the result
 ```
 
-*Related: [differenceSymmetric](#differenceSymmetric), [filter](#filter)*
+*Related: [differenceSymmetric](#differencesymmetric), [filter](#filter)*
 
 ## differenceSymmetric
 
@@ -283,7 +284,7 @@ local above5 = Array.filter({ 3, 7, 4, 9 }, function(element)
 end)
 ```
 
-*Related [partition](#partition)*
+*Related: [partition](#partition)*
 
 ## find
 
@@ -296,7 +297,7 @@ end)
 -- result is 2
 ```
 
-*Related: [contains](#contains), [findClosest](#findClosest), [findClosestBy](#findClosestBy), [findIndex](#findIndex), [findIndexByValue](#findIndexByValue), [findMap](#findMap), [reverseFind](#reverseFind)*
+*Related: [contains](#contains), [findClosest](#findclosest), [findClosestBy](#findclosestby), [findIndex](#findindex), [findIndexByValue](#findindexbyvalue), [findMap](#findmap), [reverseFind](#reversefind)*
 
 ## findClosest
 
@@ -312,7 +313,7 @@ local result = Array.findClosest({ 1, 5, 3, 9, 7 }, 6, 3)
 -- result is 7 (only indices 3..end are considered: 3, 9, 7)
 ```
 
-*Related: [findClosestBy](#findClosestBy), [findClosestIndex](#findClosestIndex), [findClosestIndexBy](#findClosestIndexBy)*
+*Related: [findClosestBy](#findclosestby), [findClosestIndex](#findclosestindex), [findClosestIndexBy](#findclosestindexby)*
 
 ## findClosestBy
 
@@ -332,7 +333,7 @@ end)
 -- result is { name = 'Charlie', score = 92 }
 ```
 
-*Related: [findClosest](#findClosest), [findClosestIndex](#findClosestIndex), [findClosestIndexBy](#findClosestIndexBy)*
+*Related: [findClosest](#findclosest), [findClosestIndex](#findclosestindex), [findClosestIndexBy](#findclosestindexby)*
 
 ## findClosestIndex
 
@@ -345,7 +346,7 @@ local result = Array.findClosestIndex({ 1, 5, 3, 9, 7 }, 6)
 -- result is 2 (value 5 is closest to 6)
 ```
 
-*Related: [findClosest](#findClosest), [findClosestBy](#findClosestBy), [findClosestIndexBy](#findClosestIndexBy), [findIndex](#findIndex)*
+*Related: [findClosest](#findclosest), [findClosestBy](#findclosestby), [findClosestIndexBy](#findclosestindexby), [findIndex](#findindex)*
 
 ## findClosestIndexBy
 
@@ -360,7 +361,7 @@ end)
 -- result is 2
 ```
 
-*Related: [findClosest](#findClosest), [findClosestBy](#findClosestBy), [findClosestIndex](#findClosestIndex), [findIndex](#findIndex)*
+*Related: [findClosest](#findclosest), [findClosestBy](#findclosestby), [findClosestIndex](#findclosestindex), [findIndex](#findindex)*
 
 ## findIndex
 
@@ -373,7 +374,7 @@ end)
 -- result is 3
 ```
 
-*Related: [find](#find), [findClosestIndex](#findClosestIndex), [findClosestIndexBy](#findClosestIndexBy), [findIndexByValue](#findIndexByValue), [findMap](#findMap), [reverseFindIndex](#reverseFindIndex)*
+*Related: [find](#find), [findClosestIndex](#findclosestindex), [findClosestIndexBy](#findclosestindexby), [findIndexByValue](#findindexbyvalue), [findMap](#findmap), [reverseFindIndex](#reversefindindex)*
 
 
 ## findIndexByValue
@@ -385,7 +386,7 @@ local result = Array.findIndexByValue({ 'a', 'b', 'c', 'b', 'd' }, 'b')
 -- result is 2
 ```
 
-*Related: [find](#find), [findIndex](#findIndex), [findMap](#findMap), [reverseFindIndexByValue](#reverseFindIndexByValue)*
+*Related: [find](#find), [findIndex](#findindex), [findMap](#findmap), [reverseFindIndexByValue](#reversefindindexbyvalue)*
 
 ## findMap
 
@@ -402,7 +403,7 @@ end)
 -- result is 'BANANA'
 ```
 
-*Related: [find](#find), [findIndex](#findIndex), [findIndexByValue](#findIndexByValue), [reverseFindMap](#reverseFindMap)*
+*Related: [find](#find), [findIndex](#findindex), [findIndexByValue](#findindexbyvalue), [reverseFindMap](#reversefindmap)*
 
 ## flatMap
 
@@ -430,7 +431,7 @@ local resultWithDepth = Array.flatten(deepNestedArray, 2)
 -- resultWithDepth is {1, 2, 3, {4, 5}, 6, 7, 8}
 ```
 
-*Related: [flatMap](#flatMap)*
+*Related: [flatMap](#flatmap)*
 
 ## fromFn
 
@@ -446,7 +447,7 @@ end)
 -- result is {2, 4, 6, 8, 10}
 ```
 
-*Related: [fromTryFn](#fromTryFn)*
+*Related: [fromTryFn](#fromtryfn)*
 
 ## fromTryFn
 
@@ -471,7 +472,7 @@ end)
 -- result is {1, 2, 3}
 ```
 
-*Related: [fromFn](#fromFn)*
+*Related: [fromFn](#fromfn)*
 
 ## insertAfter
 
@@ -604,7 +605,7 @@ end)
 -- squared is {1, 4, 9, 16}
 ```
 
-*Related [flatMap]([#flatMap), [pluck](#pluck)*
+*Related: [flatMap]([#flatmap), [pluck](#pluck)*
 
 ## maximum
 
@@ -619,7 +620,7 @@ local result = Array.maximum({25, 5}, 100) -- result is 100
 
 **Note:** if the array is empty, the initial value will be returned.
 
-*Related [maximumBy](#maximumBy), [minimum](#minimum), [minimumBy](#minimumBy)*
+*Related: [maximumBy](#maximumby), [minimum](#minimum), [minimumBy](#minimumby)*
 
 ## maximumBy
 
@@ -632,7 +633,7 @@ end)
 -- result is 12
 ```
 
-*Related [maximum](#maximum), [minimum](#minimum), [minimumBy](#minimumBy)*
+*Related: [maximum](#maximum), [minimum](#minimum), [minimumBy](#minimumby)*
 
 ## minimum
 
@@ -647,7 +648,7 @@ local result = Array.minimum({250, 500}, 10) -- result is 10
 
 **Note:** if the array is empty, the initial value will be returned.
 
-*Related [minimumBy](#minimumBy), [maximum](#maximum), [maximumBy](#maximumBy)*
+*Related: [minimumBy](#minimumby), [maximum](#maximum), [maximumBy](#maximumby)*
 
 ## minimumBy
 
@@ -657,10 +658,10 @@ Given an array and a mapping function that produces numbers, returns the smalles
 local result = Array.minimumBy({"hello", "bye", "good morning"}, function(value)
     return string.len(value)
 end)
--- result is 12
+-- result is 3
 ```
 
-*Related [minimum](#minimum), [maximum](#maximum), [maximumBy](#maximumBy)*
+*Related: [minimum](#minimum), [maximum](#maximum), [maximumBy](#maximumby)*
 
 ## partition
 
@@ -674,7 +675,7 @@ end)
 -- falseResults is {1, 3, 5}
 ```
 
-*Related [filter](#filter)*
+*Related: [filter](#filter)*
 
 ## pluck
 
@@ -715,7 +716,7 @@ local result2 = Array.pop({1, 2, 3, 4, 5}, 3)
 -- result2 is {1, 2}
 ```
 
-*Related [popFirst](#popFirst), [range](#range)*
+*Related: [popFirst](#popfirst), [range](#range)*
 
 ## popFirst
 
@@ -729,7 +730,7 @@ local result2 = Array.popFirst({1, 2, 3, 4, 5}, 3)
 -- result2 is {4, 5}
 ```
 
-*Related [pop](#pop), [range](#range)*
+*Related: [pop](#pop), [range](#range)*
 
 ## product
 
@@ -740,9 +741,9 @@ local result = Array.product({2, 3, 4})
 -- result is 24 (2 * 3 * 4)
 ```
 
-*Related [productBy](#productBy), [sum](#sum), [sumBy](#sumBy)*
+*Related: [productBy](#productby), [sum](#sum), [sumBy](#sumby)*
 
-## productby
+## productBy
 
 Calculates the product of an array given a mapping function that produces numbers.
 
@@ -754,7 +755,7 @@ end)
 -- result is 24 (2 * 3 * 4)
 ```
 
-*Related [product](#product), [sum](#sum), [sumBy](#sumBy)*
+*Related: [product](#product), [sum](#sum), [sumBy](#sumby)*
 
 ## push
 
@@ -775,7 +776,7 @@ local result = Array.range({'a', 'b', 'c', 'd', 'e', 'f'}, 2, 4)
 -- result is {'b', 'c', 'd'}
 ```
 
-*Related [pop](#pop), [popFirst](#popFirst)*
+*Related: [pop](#pop), [popFirst](#popfirst)*
 
 ## reduce
 
@@ -798,7 +799,7 @@ local result = Array.removeIndexes({ 'a', 'b', 'c', 'd' }, { 4, 2 })
 -- result is {'a', 'c'}
 ```
 
-*Related [removeSortedIndexes](#removeSortedIndexes), [removeValues](#removeValues)*
+*Related: [removeSortedIndexes](#removesortedindexes), [removeValues](#removevalues)*
 
 ## removeSortedIndexes
 
@@ -809,7 +810,7 @@ local result = Array.removeSortedIndexes({ 'a', 'b', 'c', 'd' }, { 2, 4 })
 -- result is {'a', 'c'}
 ```
 
-*Related [removeIndexes](#removeIndexes), [removeValues](#removeValues)*
+*Related: [removeIndexes](#removeindexes), [removeValues](#removevalues)*
 
 ## removeValues
 
@@ -820,7 +821,7 @@ local result = Array.removeValues({ 'a', 'b', 'c', 'd' }, 'b', 'd')
 -- result is {'a', 'c'}
 ```
 
-*Related [removeIndexes](#removeIndexes), [removeSortedIndexes](#removeSortedIndexes)*
+*Related: [removeIndexes](#removeindexes), [removeSortedIndexes](#removesortedindexes)*
 
 ## repeatSequence
 
@@ -887,7 +888,7 @@ end, 3)
 -- result is 2
 ```
 
-*Related: [find](#find), [reverseFindIndex](#reverseFindIndex), [reverseFindIndexByValue](#reverseFindIndexByValue), [reverseFindMap](#reverseFindMap)*
+*Related: [find](#find), [reverseFindIndex](#reversefindindex), [reverseFindIndexByValue](#reversefindindexbyvalue), [reverseFindMap](#reversefindmap)*
 
 ## reverseFindIndex
 
@@ -909,7 +910,7 @@ end, 3)
 -- result is 2
 ```
 
-*Related: [findIndex](#findIndex), [reverseFind](#reverseFind), [reverseFindIndexByValue](#reverseFindIndexByValue), [reverseFindMap](#reverseFindMap)*
+*Related: [findIndex](#findindex), [reverseFind](#reversefind), [reverseFindIndexByValue](#reversefindindexbyvalue), [reverseFindMap](#reversefindmap)*
 
 ## reverseFindIndexByValue
 
@@ -927,7 +928,7 @@ local result = Array.reverseFindIndexByValue({ 'a', 'b', 'c', 'b', 'd' }, 'b', 3
 -- result is 2
 ```
 
-*Related: [findIndexByValue](#findIndexByValue), [reverseFind](#reverseFind), [reverseFindIndex](#reverseFindIndex), [reverseFindMap](#reverseFindMap)*
+*Related: [findIndexByValue](#findindexbyvalue), [reverseFind](#reversefind), [reverseFindIndex](#reversefindindex), [reverseFindMap](#reversefindmap)*
 
 ## reverseFindMap
 
@@ -955,7 +956,7 @@ end, 3)
 -- result is 4
 ```
 
-*Related: [findMap](#findMap), [reverseFind](#reverseFind), [reverseFindIndex](#reverseFindIndex), [reverseFindIndexByValue](#reverseFindIndexByValue)*
+*Related: [findMap](#findMap), [reverseFind](#reversefind), [reverseFindIndex](#reversefindindex), [reverseFindIndexByValue](#reversefindindexbyvalue)*
 
 ## sort
 
@@ -982,7 +983,7 @@ end)
 -- }
 ```
 
-*Related [sortByKey](#sortByKey)*
+*Related: [sortByKey](#sortbykey)*
 
 ## sortByKey
 
@@ -1005,7 +1006,7 @@ end)
 -- }
 ```
 
-*Related [sort](#sort)*
+*Related: [sort](#sort)*
 
 ## stepBy
 
@@ -1028,7 +1029,7 @@ local total = Array.sum({20, 10, 30})
 -- total is 60
 ```
 
-*Related [sumBy](#sumBy), [product](#product), [productBy](#productBy)*
+*Related: [sumBy](#sumby), [product](#product), [productBy](#productby)*
 
 ## sumBy
 
@@ -1048,25 +1049,25 @@ end)
 ```
 
 
-*Related [sum](#sum), [product](#product), [productBy](#productBy)*
+*Related: [sum](#sum), [product](#product), [productBy](#productby)*
 
 ## takeWhile
 
 Create a new array from the start of the original array, up to the first element that does not satisfy a given condition.
 
 ```lua
-local originalArray = { 3, 1, 4, 1, 5, 3, 1, 9}
+local originalArray = { 3, 1, 4, 1, 5, 6, 1, 9}
 local result = Array.takeWhile(originalArray, function(element)
     return element <= 5
 end)
 -- result is { 3, 1, 4, 1, 5 }
 ```
 
-**Note:** The function also supports an optional `start`` parameter which skips the first elements.
+**Note:** The function also supports an optional `start` parameter which skips the first elements.
 
 ## zip
 
-Combine multiple arrays into a single array of tuples, which are just arrays in Luau. The tuples (or sub-arrays) contains the i-th elements from each of the input arrays.
+Combine multiple arrays into a single array of tuples, which are just arrays in Luau. The tuples (or sub-arrays) contain the i-th elements from each of the input arrays.
 
 **Note:** The resulting array's length is determined by the shortest input array. Extra elements from longer arrays are skipped.
 
