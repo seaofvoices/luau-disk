@@ -19,7 +19,7 @@
   "scripts": {
     "prepare": "npmluau",
     "test:roblox": "sh ./scripts/roblox-test.sh",
-    "build-assets": "sh ./scripts/build-assets.sh",
+    "build": "sh ./scripts/build-assets.sh",
     "lint": "sh ./scripts/analyze.sh && selene src",
     "lint:luau": "sh ./scripts/analyze.sh",
     "lint:selene": "selene src",

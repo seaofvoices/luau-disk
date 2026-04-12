@@ -10,33 +10,9 @@ on:
 
 jobs:
   test:
-    name: Run tests
+    name: Verify
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: CompeyDev/setup-rokit@v0.1.2
-
-      - name: Enable corepack
-        run: corepack enable
-      - uses: actions/setup-node@v3
+      - uses: seaofvoices/test-luau-package-action@v1
         with:
-          node-version: "latest"
-          cache: "yarn"
-          cache-dependency-path: "yarn.lock"
-
-      - name: Install packages
-        run: yarn install --immutable
-
-      - name: Run npmluau
-        run: yarn run prepare
-
-      - name: Run linter
-        run: yarn run lint
-
-      - name: Verify code style
-        run: yarn run style-check
-
-      - name: Build assets
-        run: yarn run build-assets
+          package-manager: yarn
