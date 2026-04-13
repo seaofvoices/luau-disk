@@ -16,3 +16,4 @@ jobs:
       - uses: seaofvoices/test-luau-package-action@v1
         with:
           package-manager: yarn
+          skip-build: true
